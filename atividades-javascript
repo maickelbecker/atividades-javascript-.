@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Atividades JavaScript</title>
+    <style>
+        .resultado {
+            font-size: 20px;
+            color: green;
+        }
+        .alterado {
+            color: red;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Atividades JavaScript</h1>
+
+    <div id="atividade1">
+        <h2>1. Mensagem de 'Olá Mundo'</h2>
+        <button onclick="olaMundo()">Clique para 'Olá Mundo'</button>
+        <p id="mensagem"></p>
+    </div>
+
+    <div id="atividade2">
+        <h2>2. Soma de 2 inteiros</h2>
+        <button onclick="soma()">Clique para somar 5 + 3</button>
+        <p id="somaResultado"></p>
+    </div>
+
+    <div id="atividade3">
+        <h2>3. Alterar propriedade de um elemento por ID</h2>
+        <button onclick="alterarPorId()">Alterar cor do texto do parágrafo</button>
+        <p id="paragrafoId">Este parágrafo será alterado.</p>
+    </div>
+
+    <div id="atividade4">
+        <h2>4. Alterar propriedade de um elemento por Name</h2>
+        <button onclick="alterarPorName()">Alterar cor do parágrafo pelo name</button>
+        <p name="paragrafoName">Este parágrafo será alterado.</p>
+    </div>
+
+    <div id="atividade5">
+        <h2>5. Alterar propriedade de um elemento por Class</h2>
+        <button onclick="alterarPorClass()">Alterar cor de parágrafos pela class</button>
+        <p class="paragrafoClass">Este parágrafo será alterado.</p>
+        <p class="paragrafoClass">Este outro parágrafo também será alterado.</p>
+    </div>
+
+    <script>
+        // (1) Mensagem de 'Olá Mundo'
+        function olaMundo() {
+            document.getElementById('mensagem').innerText = 'Olá Mundo!';
+        }
+
+        // (2) Soma de 2 inteiros
+        function soma() {
+            var a = 5;
+            var b = 3;
+            var resultado = a + b;
+            document.getElementById('somaResultado').innerText = 'Resultado da soma: ' + resultado;
+        }
+
+        // (3) Alterar a propriedade de um elemento por ID
+        function alterarPorId() {
+            document.getElementById('paragrafoId').style.color = 'blue';
+            document.getElementById('paragrafoId').innerText = 'Texto alterado pelo ID!';
+        }
+
+        // (4) Alterar a propriedade de um elemento por Name
+        function alterarPorName() {
+            var elemento = document.getElementsByName('paragrafoName')[0];
+            elemento.style.color = 'green';
+            elemento.innerText = 'Texto alterado pelo Name!';
+        }
+
+        // (5) Alterar a propriedade de um elemento por Class
+        function alterarPorClass() {
+            var elementos = document.getElementsByClassName('paragrafoClass');
+            for (var i = 0; i < elementos.length; i++) {
+                elementos[i].style.color = 'purple';
+                elementos[i].innerText = 'Texto alterado pela Class!';
+            }
+        }
+    </script>
+
+</body>
+</html>
