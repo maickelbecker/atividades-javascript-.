@@ -67,3 +67,79 @@
 
         .alterado {
             color: red;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Atividades JavaScript</h1>
+
+    <div class="atividade">
+        <h2>1. Mensagem de 'Olá Mundo'</h2>
+        <button onclick="olaMundo()">Olá Mundo</button>
+        <p id="mensagem" class="resultado"></p>
+    </div>
+
+    <div class="atividade">
+        <h2>2. Soma de 2 Números</h2>
+        <button onclick="soma()">Somar 5 + 3</button>
+        <p id="somaResultado" class="resultado"></p>
+    </div>
+
+    <div class="atividade">
+        <h2>3. Alterar elemento por ID</h2>
+        <button onclick="alterarPorId()">Alterar por ID</button>
+        <p id="paragrafoId">Texto original por ID</p>
+    </div>
+
+    <div class="atividade">
+        <h2>4. Alterar elemento por Name</h2>
+        <button onclick="alterarPorName()">Alterar por Name</button>
+        <p name="paragrafoName">Texto original por Name</p>
+    </div>
+
+    <div class="atividade">
+        <h2>5. Alterar elementos por Class</h2>
+        <button onclick="alterarPorClass()">Alterar por Class</button>
+        <p class="paragrafoClass">Texto original 1 por Class</p>
+        <p class="paragrafoClass">Texto original 2 por Class</p>
+    </div>
+
+    <script>
+        // (1) Olá Mundo
+        function olaMundo() {
+            document.getElementById('mensagem').innerText = 'Olá Mundo!';
+        }
+
+        // (2) Soma de dois números
+        function soma() {
+            const a = 5, b = 3;
+            document.getElementById('somaResultado').innerText = 'Resultado da soma: ' + (a + b);
+        }
+
+        // (3) Alterar por ID
+        function alterarPorId() {
+            const elemento = document.getElementById('paragrafoId');
+            elemento.style.color = 'blue';
+            elemento.innerText = 'Texto alterado por ID!';
+        }
+
+        // (4) Alterar por Name
+        function alterarPorName() {
+            const elemento = document.getElementsByName('paragrafoName')[0];
+            elemento.style.color = 'orange';
+            elemento.innerText = 'Texto alterado por Name!';
+        }
+
+        // (5) Alterar por Class
+        function alterarPorClass() {
+            const elementos = document.getElementsByClassName('paragrafoClass');
+            for (let i = 0; i < elementos.length; i++) {
+                elementos[i].style.color = 'purple';
+                elementos[i].innerText = 'Texto alterado por Class!';
+            }
+        }
+    </script>
+
+</body>
+</html>
