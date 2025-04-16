@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Atividades JavaScript</title>
     <style>
+        /* Resetando margens e padding para todos os elementos */
         * {
             margin: 0;
             padding: 0;
@@ -13,11 +14,11 @@
 
         body {
             font-family: Arial, sans-serif;
-            background-color: #f4f4f9;
             text-align: center;
-            padding-bottom: 50px;
+            background-color: #f4f4f9;
         }
 
+        /* Estilizando o título principal */
         h1 {
             background-color: #4CAF50;
             color: white;
@@ -28,13 +29,14 @@
             font-size: 30px;
         }
 
+        /* Estilizando as atividades */
         .atividade {
-            margin: 20px auto;
-            padding: 20px;
+            margin: 20px;
+            padding: 15px;
             background-color: #fff;
             border-radius: 10px;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            width: 90%;
+            width: 80%;
             max-width: 600px;
         }
 
@@ -43,6 +45,7 @@
             color: #333;
         }
 
+        /* Estilizando os botões */
         button {
             background-color: #4CAF50;
             color: white;
@@ -52,13 +55,13 @@
             border-radius: 5px;
             cursor: pointer;
             transition: background-color 0.3s ease;
-            margin: 10px 0;
         }
 
         button:hover {
             background-color: #45a049;
         }
 
+        /* Estilizando as saídas */
         .resultado {
             font-size: 18px;
             color: green;
@@ -68,76 +71,49 @@
         .alterado {
             color: red;
         }
+
     </style>
 </head>
 <body>
 
     <h1>Atividades JavaScript</h1>
 
-    <div class="atividade">
+    <div class="atividade" id="atividade1">
         <h2>1. Mensagem de 'Olá Mundo'</h2>
-        <button onclick="olaMundo()">Olá Mundo</button>
+        <button onclick="olaMundo()">Clique para 'Olá Mundo'</button>
         <p id="mensagem" class="resultado"></p>
     </div>
 
-    <div class="atividade">
-        <h2>2. Soma de 2 Números</h2>
-        <button onclick="soma()">Somar 5 + 3</button>
+    <div class="atividade" id="atividade2">
+        <h2>2. Soma de 2 inteiros</h2>
+        <button onclick="soma()">Clique para somar 5 + 3</button>
         <p id="somaResultado" class="resultado"></p>
     </div>
 
-    <div class="atividade">
-        <h2>3. Alterar elemento por ID</h2>
-        <button onclick="alterarPorId()">Alterar por ID</button>
-        <p id="paragrafoId">Texto original por ID</p>
-    </div>
-
-    <div class="atividade">
-        <h2>4. Alterar elemento por Name</h2>
-        <button onclick="alterarPorName()">Alterar por Name</button>
-        <p name="paragrafoName">Texto original por Name</p>
-    </div>
-
-    <div class="atividade">
-        <h2>5. Alterar elementos por Class</h2>
-        <button onclick="alterarPorClass()">Alterar por Class</button>
-        <p class="paragrafoClass">Texto original 1 por Class</p>
-        <p class="paragrafoClass">Texto original 2 por Class</p>
+    <div class="atividade" id="atividade3">
+        <h2>3. Alterar propriedade de um elemento por ID</h2>
+        <button onclick="alterarPorId()">Alterar cor do texto do parágrafo</button>
+        <p id="paragrafoId">Texto original</p>
     </div>
 
     <script>
-        // (1) Olá Mundo
+        // (1) Mensagem de 'Olá Mundo'
         function olaMundo() {
             document.getElementById('mensagem').innerText = 'Olá Mundo!';
         }
 
-        // (2) Soma de dois números
+        // (2) Soma de 2 inteiros
         function soma() {
-            const a = 5, b = 3;
-            document.getElementById('somaResultado').innerText = 'Resultado da soma: ' + (a + b);
+            var a = 5;
+            var b = 3;
+            var resultado = a + b;
+            document.getElementById('somaResultado').innerText = 'Resultado da soma: ' + resultado;
         }
 
-        // (3) Alterar por ID
+        // (3) Alterar a propriedade de um elemento por ID
         function alterarPorId() {
-            const elemento = document.getElementById('paragrafoId');
-            elemento.style.color = 'blue';
-            elemento.innerText = 'Texto alterado por ID!';
-        }
-
-        // (4) Alterar por Name
-        function alterarPorName() {
-            const elemento = document.getElementsByName('paragrafoName')[0];
-            elemento.style.color = 'orange';
-            elemento.innerText = 'Texto alterado por Name!';
-        }
-
-        // (5) Alterar por Class
-        function alterarPorClass() {
-            const elementos = document.getElementsByClassName('paragrafoClass');
-            for (let i = 0; i < elementos.length; i++) {
-                elementos[i].style.color = 'purple';
-                elementos[i].innerText = 'Texto alterado por Class!';
-            }
+            document.getElementById('paragrafoId').style.color = 'blue';
+            document.getElementById('paragrafoId').innerText = 'Texto alterado pelo ID!';
         }
     </script>
 
